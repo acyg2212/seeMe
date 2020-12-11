@@ -8,6 +8,10 @@ const { MongoClient } = require("mongodb"),
     flash = require('connect-flash'),
     port = 3333,
     app = express();
+const passport = require('./auth/passport')
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 const uri = "mongodb + srv://seeMe_app:<password>@cluster0.afmnk.mongodb.net/<dbname>?retryWrites=true&w=majority"
 
@@ -19,6 +23,8 @@ app.use(flash());
 app.use(require('cookie-parser')());
 app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json({ extended: true }));
+app.use('/login', require('./route/login'));
+app.use('/register', require('./routes/register'));
 
 app.use(Session({
     store: new FileStore({
