@@ -1,6 +1,6 @@
 const express = require('express'),
     Session = require('express-session'),
-    bodyParse = require('body-parser'),
+    bodyParse = require('body-parser');
 const { MongoClient } = require("mongodb"),
     middleware = require('connect-ensure-login'),
     FileStore = require('session-file-store')(Session),
