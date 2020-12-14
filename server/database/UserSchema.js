@@ -1,9 +1,9 @@
 const passport = require("passport");
 
-let { MongoClient } = require("mongodb"),
+let mongoose = require("mongoose"),
     bcrypt = require('bcrypt'),
     shortid = require('shortid'),
-    Schema = MongoClient.Schema;
+    Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
     username: String,
