@@ -1,7 +1,8 @@
+const node_media_server = require('./media_server')
 const express = require('express'),
     Session = require('express-session'),
     bodyParse = require('body-parser');
-const { MongoClient } = require("mongodb"),
+const mongoose = require("mongoose"),
     middleware = require('connect-ensure-login'),
     FileStore = require('session-file-store')(Session),
     config = require('./config/default'),
@@ -10,12 +11,13 @@ const { MongoClient } = require("mongodb"),
     app = express();
 const passport = require('./auth/passport')
 
+node_media_server.run();
 app.use(passport.initialize());
 app.use(passport.session());
 
-const uri = "mongodb + srv://seeMe_app:<password>@cluster0.afmnk.mongodb.net/<dbname>?retryWrites=true&w=majority"
+const uri = "mongoose + srv://seeMe_app:<password>@cluster0.afmnk.mongoose.net/<dbname>?retryWrites=true&w=majority"
 
-const client = new MongoClient(uri);
+const client = new mongoose(uri);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
 app.use(express.static('public'));

@@ -1,3 +1,3 @@
-let { MongoClient } = require("mongodb")
+let mongoose = require("mongoose")
 
-exports.User = MongoClient.model('User', require('./UserSchema'));
+exports.User = mongoose.model('User', require('./UserSchema'));
