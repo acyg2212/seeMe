@@ -27,6 +27,7 @@ app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json({ extended: true }));
 app.use('/login', require('./route/login'));
 app.use('/register', require('./routes/register'));
+app.use('/streams', require('./routes/streams'));
 
 app.use(Session({
     store: new FileStore({
