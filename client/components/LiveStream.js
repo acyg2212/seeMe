@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './LiveStreams.scss';
+import './LiveStream.scss';
 import config from '../../server/config/default';
 
 
-export default class Navbar extends React.Component {
+export default class LiveStream extends React.Component {
 
     constructor(props) {
         super(props);

@@ -5,7 +5,7 @@ const express = require('express'),
 router.get('/',
     require('connect-ensure-login').ensureLoggedOut(),
     (req, res) => {
-        res.sender('login', {
+        res.render('login', {
             user: null,
             errors: {
                 email: req.flash('email'),
