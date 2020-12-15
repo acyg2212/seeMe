@@ -7,7 +7,7 @@ export default class Navbar extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
                     <Link to={'/'} className={'navbar-brand'}>
-                        NodeStream
+                        seeMe
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
